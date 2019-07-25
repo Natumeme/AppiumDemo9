@@ -13,7 +13,7 @@ class Testhomework(object):
 
 	def test_alibaba(self):
 		driver = self.driver
-		search = driver.find_element_by_xpath('//*[@placeholder="搜索"]')
+		search = driver.find_element_by_name('q')
 		search.send_keys('阿里巴巴')
 		search.send_keys(Keys.ENTER)
 
