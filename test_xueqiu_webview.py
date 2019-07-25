@@ -1,11 +1,10 @@
 #!usr/bin/env python
 #-*- coding:utf-8 -*-
 
-import time
 from appium import webdriver
 import pytest
 from appium.webdriver.common.mobileby import MobileBy
-from appium.webdriver.webdriver import WebDriverß
+from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
