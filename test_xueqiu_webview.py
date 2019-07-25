@@ -43,7 +43,7 @@ class TestXueqiuAndroid(object):
 		caps["appPackage"] = "com.xueqiu.android"
 		caps["appActivity"] = ".view.WelcomeActivityAlias"
 		caps["autoGrantPermissions"] = "true"
-		#解决第一次启动的问题
+		#解决第一次启动
 		# caps["noReset"] = True
 		driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
 		driver.implicitly_wait(10)
