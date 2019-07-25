@@ -4,9 +4,8 @@
 import time
 from appium import webdriver
 import pytest
-from appium.webdriver.common.touch_action import TouchAction
-from appium.webdriver.webdriver import WebDriver
-from selenium.webdriver.remote.mobile import MobileBy
+from appium.webdriver.common.mobileby import MobileBy
+from appium.webdriver.webdriver import WebDriverß
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -17,20 +16,22 @@ class TestXueqiuAndroid(object):
 	def setup_class(cls):
 		print("setup class 在当前类下的所有用例执行之前只执行一次")
 		cls.driver=cls.restart_app()
-		WebDriverWait(cls.driver, 20).until(EC.presence_of_element_located(MobileBy.xpath, "//*[@text='交易']"))
+		WebDriverWait(cls.driver, 20).until(EC.presence_of_element_located((MobileBy.XPATH, "//*[@text='交易']")))
 		cls.driver.find_element_by_xpath("//*[@text='交易']").click()
 
 	def setup_method(self):
 		print("setup method 在每个测试用例执行之前执行一次")
 		self.driver=TestXueqiuAndroid.driver
+
 		self.driver.find_element_by_xpath("//*[@text='交易']").click()
 
 	def test_webview_simulator(self):
 		self.driver.find_element_by_accessibility_id('A股开户').click()
 		self.driver.find_element_by_accessibility_id('立即开户')
-		WebDriverWait(self.driver,20).until(EC.presence_of_element_located(MobileBy.ACCESSIBILITY_ID,'立即开户'))
+		WebDriverWait(self.driver,20).until(EC.presence_of_element_located((MobileBy.ACCESSIBILITY_ID,'立即开户')))
 
 	def teardown_method(self):
+		self.driver.back()
 		self.driver.back()
 
 	@classmethod
