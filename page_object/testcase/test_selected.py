@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 
 import pytest
-from page_object.pages.MainPage import MainPage
+from page_object.page.MainPage import MainPage
 
 
 class TestSelected(object):
@@ -10,4 +10,5 @@ class TestSelected(object):
 		main=MainPage()
 		assert main.gotoSelected().getPriceByName("科大讯飞") == 28.83
 
-	def test_add
+	def test_add_stock(self):
+		pass
