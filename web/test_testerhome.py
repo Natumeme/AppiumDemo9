@@ -23,7 +23,9 @@ class TestTesterhome(object):
 
 	def test_execute(self):
 		#执行JS的命令
-
+		raw = self.driver.execute_script("return JSON.stringify(window.performance.timing)")
+		print(raw)
 
 	def teardown(self):
+		time.sleep(2)
 		self.driver.quit()
