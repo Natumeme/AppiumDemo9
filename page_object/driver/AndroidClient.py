@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
 from appium import webdriver
-from appium.webdriver.webdriver import WebDriver
+from appium.webdriver import WebDriver
 
 
 class AndroidClient(object):

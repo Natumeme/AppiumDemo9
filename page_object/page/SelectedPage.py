@@ -1,5 +1,7 @@
 #!usr/bin/env python
 #-*- coding:utf-8 -*-
+from page_object.driver.AndroidClient import AndroidClient
+
 
 class SelectedPage(object):
 	def addDefault(self):
@@ -7,4 +9,8 @@ class SelectedPage(object):
 
 	def getPriceByName(self,name):
 		#todo:
-		pass
+		AndroidClient.driver\
+			.find_element_by_xpath("//*[contains(@resource-id,'stockName') and @text='"+name+"']"+
+		     "/../*[contains(@resource-id,'currentPrice')]").text
+		return price
+
