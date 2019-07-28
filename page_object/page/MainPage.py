@@ -5,17 +5,15 @@ from selenium.webdriver.common.by import By
 from page_object.driver.AndroidClient import AndroidClient
 from page_object.page.BasePage import BasePage
 from page_object.page.MarketPage import MarketPage
+from page_object.page.SearchPage import SearchPage
 from page_object.page.SelectedPage import SelectedPage
 
 class MainPage(BasePage):
 	def gotoSelected(self):
 		#调用全局的driver对象使用webdriver api操纵app
-		# self.driver.find_element(BY.xpath,"//*[@text='自选']")
-		zixuan=(By.XPATH,"//*[@text='自选']")
-		self.find(zixuan)
-		#self.driver.find_element_by_xpath("//*[@text='自选']")
-		self.find(zixuan).click()
-		#self.driver.find_element_by_xpath("//*[@text='自选']").click()
+		zixuan=("自选")
+		self.findByText(zixuan)
+		self.findByText(zixuan).click()
 
 		return SelectedPage()
 
@@ -23,8 +21,13 @@ class MainPage(BasePage):
 		# AndroidClient.driver.find_element_by_xpath("//*[@text='行情']")
 		# AndroidClient.driver.find_element_by_xpath("//*[@text='行情']").click()
 
-		market=(By.XPATH,"//*[@text='行情']")
-		self.find(market)
-		self.find(market).click()
+		market=("行情")
+		self.findByText(market)
+		self.findByText(market).click()
 
 		return MarketPage()
+
+	def gotoSearch(self):
+		search_button=(By.ID,"home_search")
+		self.find(search_button).click()
+		return SearchPage()
