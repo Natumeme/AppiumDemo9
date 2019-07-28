@@ -14,4 +14,4 @@ class SelectedPage(object):
 		return float(price)
 
 	def getMarketPrice(self):
-		price = AndroidClient.driver.find_element_by_xpath("//*[contains(@resource-id,'index_name') and @instance='13']/..//*[contains(@resource-id,'index_price') and @instance='12']")
+		price = AndroidClient.driver.find_element_by_xpath("//*[@text='深证成指']/..//*[contains(@resource-id,'index_price') and @instance='12']")

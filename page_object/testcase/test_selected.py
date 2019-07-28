@@ -8,7 +8,7 @@ from page_object.page.MainPage import MainPage
 class TestSelected(object):
 	def test_price(self):
 		main=MainPage()
-		assert main.gotoSelected().getPriceByName("阿里巴巴") == 28.83
+		assert main.gotoSelected().getPriceByName("科大讯飞") == 33.82
 
 	def test_add_stock(self):
 		pass
