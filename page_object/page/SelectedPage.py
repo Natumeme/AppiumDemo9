@@ -13,4 +13,3 @@ class SelectedPage(object):
 			.find_element_by_xpath("//*[contains(@resource-id,'stockName') and @text='"+name+"']"+
 		     "/../*[contains(@resource-id,'currentPrice')]").text
 		return price
-
