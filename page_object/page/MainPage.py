@@ -16,3 +16,7 @@ class MainPage(object):
 		AndroidClient.driver.find_element_by_xpath("//*[@text='自选']").click()
 
 		return SelectedPage()
+
+	def gotoMarket(self):
+		AndroidClient.driver.find_element_by_xpath("//*[@text='行情']")
+		AndroidClient.driver.find_element_by_xpath("//*[@text='行情']").click()
