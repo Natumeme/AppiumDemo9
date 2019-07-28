@@ -29,6 +29,8 @@ class AndroidClient(object):
 		caps["deviceName"] = "hogwarts"
 		caps["appPackage"] = "com.xueqiu.android"
 		caps["appActivity"] = ".view.WelcomeActivityAlias"
+		caps["unicodeKeyboard"]=True
+		caps["resetKeyboard"]=True
 		# caps["autoGrantPermissions"] = "true"
 		# 为了更快的启动，并保留之前的数据，从而保存上一个case执行后的状态
 		caps["noReset"] = True
