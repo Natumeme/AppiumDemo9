@@ -3,15 +3,11 @@
 from page_object.driver.AndroidClient import AndroidClient
 
 
-class SelectedPage(object):
+class MarketPage(object):
 	def addDefault(self):
 		return self
 
-	def getPriceByName(self,name) -> float:
+	def getMarketPrice(self,name) -> float:
 		price = AndroidClient.driver\
-			.find_element_by_xpath("//*[contains(@resource-id, 'stockName') and @text='%s']" %name +
-             "/../../..//*[contains(@resource-id, 'currentPrice')]").text
+		.find_element_by_xpath("//*[@text='%s']" %name+ "/..//*[contains(@resource-id,'index_price') and @instance='12']").text
 		return float(price)
-
-	def getMarketPrice(self):
-		price = AndroidClient.driver.find_element_by_xpath("//*[@text='深证成指']/..//*[contains(@resource-id,'index_price') and @instance='12']")

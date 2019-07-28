@@ -10,7 +10,7 @@ class SelectedPage(object):
 	def getPriceByName(self,name) -> float:
 		#todo:
 		price = AndroidClient.driver\
-			.find_element_by_xpath("//*[contains(@resource-id,'stockName') and @text='科大讯飞']/../../../..//*[contains(@resource-id,'item_layout') and @instance='33']").text
+			.find_element_by_xpath("//*[contains(@resource-id,'stockName') and @text='%s']" %name+"/../../../..//*[contains(@resource-id,'item_layout') and @instance='33']").text
 		return float(price)
 
 	def getPrice(self):

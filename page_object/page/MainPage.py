@@ -1,6 +1,7 @@
 #!usr/bin/env python
 #-*- coding:utf-8 -*-
 from page_object.driver.AndroidClient import AndroidClient
+from page_object.page.MarketPage import MarketPage
 from page_object.page.SelectedPage import SelectedPage
 
 class MainPage(object):
@@ -20,3 +21,4 @@ class MainPage(object):
 	def gotoMarket(self):
 		AndroidClient.driver.find_element_by_xpath("//*[@text='行情']")
 		AndroidClient.driver.find_element_by_xpath("//*[@text='行情']").click()
+		return MarketPage()

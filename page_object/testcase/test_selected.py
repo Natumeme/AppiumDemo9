@@ -12,3 +12,7 @@ class TestSelected(object):
 
 	def test_add_stock(self):
 		pass
+
+	def test_market(self):
+		main=MainPage()
+		assert  main.gotoMarket().getMarketPrice('深证成指') > 8000
