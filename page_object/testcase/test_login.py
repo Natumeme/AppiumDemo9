@@ -12,11 +12,11 @@ class TestLogin(object):
 		pass
 
 	def test_login_password(self):
-		#手机号错
+		#手机号错误
 		self.loginPage.loginBypassword("12345678901","123456")
 		assert "手机号码" in self.loginPage.getErrorMsg()
 
-		#密码错
+		#密码错误
 		self.loginPage.loginBypassword("12345678901", "12345e6")
 		assert "密码" in self.loginPage.getErrorMsg()
 	def teardown_method(self):

@@ -11,7 +11,6 @@ class MarketPage(BasePage):
 		return self
 
 	def getMarketPrice(self,name) -> float:
-		#price = self.driver.find_element_by_xpath("//*[@text='%s']" %name+ "/..//*[contains(@resource-id,'index_price') and @instance='12']").text
 		price_Locator=(By.XPATH,"//*[@text='%s']" %name+ "/..//*[contains(@resource-id,'index_price') and @instance='12']")
 		price=self.find(price_Locator).text
 
