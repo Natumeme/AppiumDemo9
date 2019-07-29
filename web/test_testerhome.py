@@ -36,6 +36,9 @@ class TestTesterhome(object):
 	def test_execute(self):
 		self.driver.execute("getXXX",params={"x":1,"y":2})
 
+	def test_cookie(self):
+		print(self.driver.get_cookies())
+		self.driver.add_cookie({"x":"c"})
 
 	def teardown(self):
 		time.sleep(2)
