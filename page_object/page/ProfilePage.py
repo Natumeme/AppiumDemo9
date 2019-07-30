@@ -44,5 +44,6 @@ class LoginPage(BasePage):
 
 class ProfilePage(BasePage):
 	def gotoLogin(self):
-		self.find("iv_login_phone").click()
+		self.findByText(By.ID,"iv_login_phone").click()
+		# self.find("iv_login_phone").click()
 		return LoginPage
