@@ -19,5 +19,6 @@ class TestLogin(object):
 		#密码错误
 		self.loginPage.loginBypassword("12345678901", "12345e6")
 		assert "密码" in self.loginPage.getErrorMsg()
+
 	def teardown_method(self):
 		pass
