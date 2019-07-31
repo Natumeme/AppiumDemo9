@@ -10,7 +10,7 @@ from page_object.page.SearchPage import SearchPage
 from page_object.page.SelectedPage import SelectedPage
 
 class MainPage(BasePage):
-	_profile_button=(By.XPATH,"user_profile_icon")
+	_profile_button=(By.ID,"user_profile_icon")
 	def gotoSelected(self):
 		#调用全局的driver对象使用webdriver api操纵app
 		zixuan=("自选")

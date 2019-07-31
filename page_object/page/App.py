@@ -6,7 +6,7 @@ from page_object.page.MainPage import MainPage
 
 class App(object):
 	@classmethod
-	def main(self)
+	def main(self):
 		#初始化
 		AndroidClient.restart_app()
 		return MainPage()
