@@ -33,7 +33,7 @@ class TestTesterhome(object):
 		print(raw)
 		print(json.dumps(json.loads(raw),indent=4))
 
-	def test_execute(self):
+	def test_execute1(self):
 		self.driver.execute("getXXX",params={"x":1,"y":2})
 
 	def test_cookie(self):
