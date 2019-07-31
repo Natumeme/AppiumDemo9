@@ -20,15 +20,8 @@ class TestXueqiu(BaseTestCase):
 
 	def test_profile(self):
 		#添加cookie
-		self.driver.add_cookie({"name":"xxx","value":"xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
-		self.driver.add_cookie({"name": "xxx", "value": "xxx"})
+		self.driver.add_cookie({"name":"device_id","value":"xx"})
+		self.driver.add_cookie({"name": "xq_a_token", "value": "xx"})
 		print(self.driver.get_cookies())
 
 		self.driver.refresh()
