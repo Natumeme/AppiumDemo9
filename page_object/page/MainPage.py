@@ -20,9 +20,6 @@ class MainPage(BasePage):
 		return SelectedPage()
 
 	def gotoMarket(self):
-		# AndroidClient.driver.find_element_by_xpath("//*[@text='行情']")
-		# AndroidClient.driver.find_element_by_xpath("//*[@text='行情']").click()
-
 		market=("行情")
 		self.findByText(market)
 		self.findByText(market).click()
