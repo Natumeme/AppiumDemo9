@@ -1,5 +1,6 @@
 #!usr/bin/env python
 #-*- coding:utf-8 -*-
+from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from page_object.driver.AndroidClient import AndroidClient
@@ -8,6 +9,11 @@ from page_object.driver.AndroidClient import AndroidClient
 class BasePage(object):
 	def __init__(self):
 		self.driver=AndroidClient.driver
+
+	@classmethod
+	def getDriver(cls):
+		#找到对应的driver
+		cls.driver=AndroidClient.driver
 
 	def find(self,kv) -> WebElement:
 		#todo:处理各类弹框

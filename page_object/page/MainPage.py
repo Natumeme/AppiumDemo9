@@ -11,6 +11,7 @@ from page_object.page.SelectedPage import SelectedPage
 
 class MainPage(BasePage):
 	_profile_button=(By.ID,"user_profile_icon")
+	_search_button=(By.ID,"home_search")
 	def gotoSelected(self):
 		#调用全局的driver对象使用webdriver api操纵app
 		zixuan=("自选")
@@ -30,8 +31,7 @@ class MainPage(BasePage):
 		return MarketPage()
 
 	def gotoSearch(self):
-		search_button=(By.ID,"home_search")
-		self.find(search_button).click()
+		self.find(self._search_button).click()
 		return SearchPage()
 
 	def gotoProfile(self):

@@ -11,8 +11,9 @@ class SelectedPage(BasePage):
 		return self
 
 	def getPriceByName(self,name) -> float:
-		#price = self.driver.find_element_by_xpath("//*[contains(@resource-id,'stockName') and @text='%s']" %name+"/../../../..//*[contains(@resource-id,'item_layout') and @instance='33']").text
-		price_Locator=(By.XPATH,"//*[contains(@resource-id,'stockName') and @text='%s']" %name+"/../../../..//*[contains(@resource-id,'item_layout') and @instance='33']")
+
+		price_Locator=(By.XPATH,"//*[contains(@resource-id,'stockName') and @text='%s']" %name+
+		               "/../../../..//*[contains(@resource-id,'item_layout') and @instance='33']")
 		price=self.find(price_Locator).text
 		return float(price)
 
