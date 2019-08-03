@@ -5,6 +5,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 from web.page_object.page.MainPage import MainPage
+from web.page_object.page.ProfilePage import ProfilePage
 from web.page_object.testcase.BaseTestCase import BaseTestCase
 
 class TestXueqiu(BaseTestCase):
@@ -19,13 +20,10 @@ class TestXueqiu(BaseTestCase):
 		#todo:add assertion
 
 	def test_profile(self):
-		#添加cookie
-		self.driver.add_cookie({"name":"device_id","value":"xx"})
-		self.driver.add_cookie({"name": "xq_a_token", "value": "xx"})
-		print(self.driver.get_cookies())
-
-		self.driver.refresh()
-		self.driver.get("https://xueqiu.com/setting/user")
+		profile=ProfilePage(self.driver)
+		profile.login()
+		selected=profile.gotoSelected()
+		selected.select("alibaba","1688")
 
 	def test_log(self):
 		self.log.warning("warning")

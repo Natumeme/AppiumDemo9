@@ -3,7 +3,6 @@
 from appium import webdriver
 from appium.webdriver.webdriver import WebDriver
 
-
 class AndroidClient(object):
 	driver:WebDriver
 	@classmethod
