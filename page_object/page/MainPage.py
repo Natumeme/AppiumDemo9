@@ -17,7 +17,6 @@ class MainPage(BasePage):
 		zixuan=("自选")
 		self.findByText(zixuan)
 		self.findByText(zixuan).click()
-
 		return SelectedPage()
 
 	def gotoMarket(self):

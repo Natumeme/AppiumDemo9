@@ -18,7 +18,7 @@ class TestSelected(object):
 		self.searchPage=self.mainPage.gotoSearch()
 
 	def test_price(self):
-		assert self.mainPage.gotoSelected().getPriceByName("科大讯飞") == 33.82
+		assert self.mainPage.gotoSelected().getPriceByName("科大讯飞") == 31.98
 
 	def test_is_selected_stock(self):
 		self.searchPage.search("alibaba")

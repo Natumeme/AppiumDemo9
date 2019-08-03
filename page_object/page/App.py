@@ -5,9 +5,9 @@ from page_object.driver.AndroidClient import AndroidClient
 from page_object.page.BasePage import BasePage
 from page_object.page.MainPage import MainPage
 
-class App(object):
+class App(BasePage):
 	@classmethod
 	def main(cls):
 		#初始化
-		AndroidClient.restart_app()
+		cls.getClient().restart_app()
 		return MainPage()
