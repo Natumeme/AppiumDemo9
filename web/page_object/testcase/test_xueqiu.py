@@ -10,7 +10,9 @@ from web.page_object.testcase.BaseTestCase import BaseTestCase
 
 class TestXueqiu(BaseTestCase):
 	def setup(self):
-		self.driver=webdriver.Remote(desired_capabilities=DesiredCapabilities.CHROME)
+		#通过远程
+		#self.driver=webdriver.Remote(desired_capabilities=DesiredCapabilities.CHROME)
+		self.driver=webdriver.Chrome()
 		self.driver.implicitly_wait(10)
 		self.driver.get("https://xueqiu.com/")
 		self.main=MainPage(self.driver)
